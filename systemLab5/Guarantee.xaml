@@ -1,0 +1,23 @@
+﻿<Window x:Class="systemLab5.Guarantee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:systemLab5"
+        mc:Ignorable="d"
+        Title="Guarantee" Height="450" Width="1200">
+    <Grid>
+        <TextBlock TextWrapping="Wrap" Text="Количество заданий" Margin="35,76,1035,301"/>
+        <TextBlock TextWrapping="Wrap" Text="Размер кванта" Margin="35,198,1048,179"/>
+        <TextBox x:Name="numOfTasksBox" TextWrapping="Wrap" Text="" Margin="220,76,878,311" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="minTimeBox" TextWrapping="Wrap" Text="" Margin="220,198,878,188" TextChanged="textBox_TextChanged"/>
+        <Button Content="Start configuring" Margin="28,351,1048,41" Click="Button_Click"/>
+
+        <Button Content="Start" Margin="353,361,765,31" Click="Button_Click_1"/>
+        <TextBlock TextWrapping="Wrap" Text="Настройка процессов " Margin="375,34,671,363"/>
+        <ListBox x:Name="listBox" Margin="375,90,629,90"/>
+        <TextBox x:Name="logger" TextWrapping="Wrap" Text="" Margin="600,39,160,41"/>
+        <Button Content="ChangeState" Margin="484,361,629,31" Click="Button_Click_2"/>
+
+    </Grid>
+</Window>
