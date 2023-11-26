@@ -56,7 +56,7 @@ namespace systemLab5.services
             {
                 if (isStarted)
                 {
-                    PriorityTask nextTask = priorityTasks.OrderByDescending(task => task.Priority).First();
+                    PriorityTask nextTask = priorityTasks.OrderByDescending(task => task.Priority).ThenBy(task => task.LastActiveTime).First();
                     if (nextTask != null)
                     {
                         int duration = Math.Min(quantum, nextTask.Duration);
@@ -81,9 +81,6 @@ namespace systemLab5.services
                         await nextTask.IntitalizeTask(duration);
 
                         logger.Invoke($"Ending task {nextTask.Id} current time: {currentTime}\n\n");
-
-                        if(nextTask.Priority > 0)
-                            nextTask.Priority--;
 
                         if (nextTask.Duration <= 0)
                         {
